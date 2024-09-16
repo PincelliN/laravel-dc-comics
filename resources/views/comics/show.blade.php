@@ -21,3 +21,6 @@
         </div>
     </div>
 @endsection
+@section('titlePage')
+    {{ $comic->slug }}
+@endsection
