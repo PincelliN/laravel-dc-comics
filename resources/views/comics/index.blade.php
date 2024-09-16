@@ -2,8 +2,8 @@
 
 
 @section('content')
-    <h1>Fumwetti</h1>
-    <table class="table">
+    <h1>Fumetti</h1>
+    <table class="table mx-5">
         <thead>
             <tr>
                 <th scope="col">id</th>
@@ -26,7 +26,8 @@
                     <td><img class='cover' src="{{ $comic->thumb }}" alt="{{ $comic->title }}"></td>
                     <td>{{ $comic->price }}</td>
                     <td>{{ $comic->sale_date }}</td>
-                    <td><a class='btn btn-warning' href="{{-- {{ route(comics . show) }} --}}"><i class="fa-brands fa-readme"></i></a></td>
+                    <td><a class='btn btn-warning' href="{{ route('comics.show', $comic) }} "><i
+                                class="fa-brands fa-readme"></i></a></td>
                 </tr>
             @endforeach
 

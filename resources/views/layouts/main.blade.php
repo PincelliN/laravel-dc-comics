@@ -16,15 +16,15 @@
 </head>
 
 <body>
+    <div class="container">
+        @include('partials.navbar')
 
-    @include('partials.navbar')
+        @yield('hero')
 
-    @yield('hero')
+        @yield('content')
 
-    @yield('content')
-
-    @include('partials.footer')
-
+        @include('partials.footer')
+    </div>
 </body>
 
 </html>
