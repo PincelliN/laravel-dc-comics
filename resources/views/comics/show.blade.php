@@ -17,6 +17,9 @@
         <div class="card-body">
             <a href="{{ route('comics.index') }}" class="card-link btn btn-danger"><i
                     class="fa-solid fa-right-from-bracket"></i></a>
+            <a class='btn btn-warning d-inline' href="{{ route('comics.edit', $comic) }}">
+                <i class="fa-solid fa-pencil"></i>
+            </a>
 
         </div>
     </div>

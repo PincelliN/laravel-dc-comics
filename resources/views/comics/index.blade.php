@@ -13,6 +13,8 @@
                 <th scope="col">Price</th>
                 <th scope="col">Data di Uscita</th>
                 <th scope="col">Dettaglio</th>
+                <th scope="col">Modifica</th>
+
 
             </tr>
         </thead>
@@ -28,6 +30,10 @@
                     <td>{{ $comic->sale_date }}</td>
                     <td><a class='btn btn-warning' href="{{ route('comics.show', $comic) }} "><i
                                 class="fa-brands fa-readme"></i></a></td>
+                    <td> <a class='btn btn-warning' href="{{ route('comics.edit', $comic) }}">
+                            <i class="fa-solid fa-pencil"></i>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
 
