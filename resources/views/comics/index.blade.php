@@ -34,15 +34,16 @@
                     <td><img class='cover' src="{{ $comic->thumb }}" alt="{{ $comic->title }}"></td>
                     <td>{{ $comic->price }}</td>
                     <td>{{ $comic->sale_date }}</td>
-                    <td><a class='btn btn-warning' href="{{ route('comics.show', $comic) }} "><i
+                    <td><a class='btn btn-warning' href="{{ route('comics.show', $comic) }} " title="Read"><i
                                 class="fa-brands fa-readme"></i></a></td>
-                    <td> <a class='btn btn-warning' href="{{ route('comics.edit', $comic) }}">
+                    <td> <a class='btn btn-warning' href="{{ route('comics.edit', $comic) }}" title="Modifica">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
                     </td>
                     <td>
                         <form action="{{ route('comics.destroy', $comic) }}" method="post"
-                            onsubmit="return confirm('sei sicuro di voler cancellare{{ $comic->title }}')">
+                            onsubmit="return confirm('sei sicuro di voler cancellare{{ $comic->title }}')"
+                            title="Cancella">
                             @csrf
 
                             @method('Delete')

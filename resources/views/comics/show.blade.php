@@ -15,13 +15,13 @@
             <li class="list-group-item">{{ $comic->type }}</li>
         </ul>
         <div class="card-body">
-            <a href="{{ route('comics.index') }}" class="card-link btn btn-danger"><i
+            <a href="{{ route('comics.index') }}" class="card-link btn btn-danger" title="Home"><i
                     class="fa-solid fa-right-from-bracket"></i></a>
-            <a class='btn btn-warning ' href="{{ route('comics.edit', $comic) }}">
+            <a class='btn btn-warning ' href="{{ route('comics.edit', $comic) }}" title="Modifica">
                 <i class="fa-solid fa-pencil"></i>
             </a>
             <form class="d-inline" action="{{ route('comics.destroy', $comic) }}" method="post"
-                onsubmit="return confirm('sei sicuro di voler cancellare{{ $comic->title }}')">
+                onsubmit="return confirm('sei sicuro di voler cancellare{{ $comic->title }}')" title="Cancella">
                 @csrf
 
                 @method('Delete')
