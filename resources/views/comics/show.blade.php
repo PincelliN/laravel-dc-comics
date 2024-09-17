@@ -20,7 +20,8 @@
             <a class='btn btn-warning ' href="{{ route('comics.edit', $comic) }}">
                 <i class="fa-solid fa-pencil"></i>
             </a>
-            <form class="d-inline" action="{{ route('comics.destroy', $comic) }}" method="post">
+            <form class="d-inline" action="{{ route('comics.destroy', $comic) }}" method="post"
+                onsubmit="return confirm('sei sicuro di voler cancellare{{ $comic->title }}')">
                 @csrf
 
                 @method('Delete')

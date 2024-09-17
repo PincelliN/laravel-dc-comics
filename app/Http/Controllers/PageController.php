@@ -107,6 +107,6 @@ class PageController extends Controller
         $comic=Comic::find($id);
         $comic->delete();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('delete','Il prodotto'.$comic->title.'é stato eliminato dal database');
     }
 }

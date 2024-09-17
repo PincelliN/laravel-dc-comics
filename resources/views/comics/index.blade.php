@@ -2,6 +2,11 @@
 
 
 @section('content')
+    @if (session('delete'))
+        <div class="alert alert-success m-1" role="alert">{{ session('delete') }}</div>
+    @endif
+
+
     <h1>Fumetti</h1>
     <table class="table mx-5">
         <thead>
@@ -36,7 +41,8 @@
                         </a>
                     </td>
                     <td>
-                        <form action="{{ route('comics.destroy', $comic) }}" method="post">
+                        <form action="{{ route('comics.destroy', $comic) }}" method="post"
+                            onsubmit="return confirm('sei sicuro di voler cancellare{{ $comic->title }}')">
                             @csrf
 
                             @method('Delete')
