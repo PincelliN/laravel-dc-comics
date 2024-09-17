@@ -2,8 +2,10 @@
 
 @section('content')
     <h2>Nuova Fumetto</h2>
-    <form class="bg bg-white p-5" action="{{ route('comics.store') }}" method="post">
+    <form class="bg bg-white p-5" action="{{ route('comics.update', $comic) }}" method="post">
         @csrf
+        {{-- aggiungo il metodo put --}}
+        @method('put')
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
             <input type="text" class="form-control" id="title" name="title" value="{{ $comic['title'] }}">

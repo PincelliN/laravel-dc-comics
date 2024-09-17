@@ -77,7 +77,26 @@ class PageController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+         $data=$request->all();
+         $comic=Comic::find($id);
+
+
+         /* $new_comic->title=$data['title'];
+        $new_comic->slug=Helper::generateSlug($new_comic->title,Comic::class);
+        $new_comic->description=$data['description'];
+        $new_comic->thumb=$data['thumb'];
+        $new_comic->price=$data['price'];
+        $new_comic->series=$data['series'];
+        $new_comic->sale_date=$data['sale_date'];
+        $new_comic->type=$data['type']; */
+        if($comic['title'] != $data['title']){
+         $data['slug'] = Helper::generateSlug($data['title'],Comic::class);
+        }
+
+        $comic->update($data);
+
+
+        return redirect()->route('comics.show',$comic->id);
     }
 
     /**
