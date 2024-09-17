@@ -17,9 +17,16 @@
         <div class="card-body">
             <a href="{{ route('comics.index') }}" class="card-link btn btn-danger"><i
                     class="fa-solid fa-right-from-bracket"></i></a>
-            <a class='btn btn-warning d-inline' href="{{ route('comics.edit', $comic) }}">
+            <a class='btn btn-warning ' href="{{ route('comics.edit', $comic) }}">
                 <i class="fa-solid fa-pencil"></i>
             </a>
+            <form class="d-inline" action="{{ route('comics.destroy', $comic) }}" method="post">
+                @csrf
+
+                @method('Delete')
+                <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
+
+            </form>
 
         </div>
     </div>

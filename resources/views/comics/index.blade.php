@@ -14,6 +14,7 @@
                 <th scope="col">Data di Uscita</th>
                 <th scope="col">Dettaglio</th>
                 <th scope="col">Modifica</th>
+                <th scope="col">Cancella</th>
 
 
             </tr>
@@ -33,6 +34,15 @@
                     <td> <a class='btn btn-warning' href="{{ route('comics.edit', $comic) }}">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
+                    </td>
+                    <td>
+                        <form action="{{ route('comics.destroy', $comic) }}" method="post">
+                            @csrf
+
+                            @method('Delete')
+                            <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
+
+                        </form>
                     </td>
                 </tr>
             @endforeach
