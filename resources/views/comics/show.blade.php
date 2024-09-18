@@ -11,7 +11,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Prezzo:{{ $comic->price }}</li>
             <li class="list-group-item">Serie:{{ $comic->series }}</li>
-            <li class="list-group-item">Data di Uscita:{{ $comic->sale_date }}</li>
+            <li class="list-group-item">Data di Uscita: {{ \Carbon\Carbon::parse($comic->sale_date)->format('d/m/Y') }}</li>
             <li class="list-group-item">{{ $comic->type }}</li>
         </ul>
         <div class="card-body">

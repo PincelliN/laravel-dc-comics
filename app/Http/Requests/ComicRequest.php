@@ -23,10 +23,10 @@ class ComicRequest extends FormRequest
     {
         return [
             'title'=>'required|min:5|max:100',
-            'thumb'=>'required|extensions:jpg,png,gif|starts_with:https://www.',
+            'thumb'=>'required|extensions:jpg,png,gif|starts_with:https://.',
             'price'=>'required|min:3|max:10',
             'series'=>'required|min:2|max:100',
-            'sale_date'=>'required',
+            'sale_date'=>'required|date',
             'type'=>'required|min:3|max:50'
         ];
     }
@@ -40,7 +40,7 @@ class ComicRequest extends FormRequest
 
             'thumb.required' => 'Il campo immagine è obbligatorio.',
             'thumb.extensions' => 'L\'immagine deve avere un\'estensione valida (jpg, png, gif).',
-            'thumb.starts_with' => 'L\'URL deve iniziare con https://www.',
+            'thumb.starts_with' => 'L\'URL deve iniziare con https://.',
 
             'price.required' => 'Il campo prezzo è obbligatorio.',
             'price.min' => 'Il prezzo deve essere di almeno 3 caratteri.',
@@ -51,6 +51,7 @@ class ComicRequest extends FormRequest
             'series.max' => 'La serie non può superare i 100 caratteri.',
 
             'sale_date.required' => 'La data di uscita è obbligatoria.',
+            'sale_date.date'=>'La data deve essere essere formattata gg/mm/yy',
 
             'type.required' => 'Il campo tipo è obbligatorio.',
             'type.min' => 'Il tipo deve avere almeno 3 caratteri.',

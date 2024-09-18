@@ -65,7 +65,8 @@ class PageController extends Controller
             'type.max' => 'Il tipo non può superare i 50 caratteri.'
         ]); */
         $data=$request->all();
-        /*  dd($data); */
+          dd($data);
+
         $new_comic= new Comic();
 
          /* $new_comic->title=$data['title'];

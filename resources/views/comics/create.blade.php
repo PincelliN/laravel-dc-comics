@@ -62,7 +62,7 @@
         </div>
         <div class="mb-3">
             <label for="sale_date" class="form-label">Data d'uscita</label>
-            <input type="text" class="form-control" id="sale_date" name="sale_date" placeholder="2020-10-06"
+            <input type="date" class="form-control" id="sale_date" name="sale_date" placeholder="2020-10-06"
                 value="{{ old('sale_date') }}">
             @error('sale_date')
                 <div class="alert alert-danger mt-1">

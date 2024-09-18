@@ -33,7 +33,7 @@
                     <td>{{ $comic->slug }}</td>
                     <td><img class='cover' src="{{ $comic->thumb }}" alt="{{ $comic->title }}"></td>
                     <td>{{ $comic->price }}</td>
-                    <td>{{ $comic->sale_date }}</td>
+                    <td>{{ \Carbon\Carbon::parse($comic->sale_date)->format('d/m/Y') }}</td>
                     <td><a class='btn btn-warning' href="{{ route('comics.show', $comic) }} " title="Read"><i
                                 class="fa-brands fa-readme"></i></a></td>
                     <td> <a class='btn btn-warning' href="{{ route('comics.edit', $comic) }}" title="Modifica">

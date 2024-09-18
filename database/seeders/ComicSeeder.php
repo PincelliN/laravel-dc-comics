@@ -8,6 +8,7 @@ use App\Models\Comic;
 use App\Functions\Helper;
 use Illuminate\Support\Str;
 
+
 class ComicSeeder extends Seeder
 {
     /**
