@@ -35,7 +35,7 @@ class PageController extends Controller
     {
         $request->validate([
             'title'=>'required|min:5|max:100',
-            'thumb'=>'required|extensions:jpg,png,gif|start_with:https://www.',
+            'thumb'=>'required|extensions:jpg,png,gif|starts_with:https://www.',
             'price'=>'required|min:3|max:10',
             'series'=>'required|min:2|max:100',
             'sale_date'=>'required',
@@ -57,7 +57,7 @@ class PageController extends Controller
             'series.min' => 'La serie deve avere almeno 2 caratteri.',
             'series.max' => 'La serie non può superare i 100 caratteri.',
 
-            'sale_date.required' => 'La data di vendita è obbligatoria.',
+            'sale_date.required' => 'La data di uscita è obbligatoria.',
 
             'type.required' => 'Il campo tipo è obbligatorio.',
             'type.min' => 'Il tipo deve avere almeno 3 caratteri.',
