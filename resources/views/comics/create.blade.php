@@ -4,6 +4,18 @@
     <h2>Nuova Fumetto</h2>
     <form class="bg bg-white p-5" action="{{ route('comics.store') }}" method="post">
         @csrf
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @enderror
+
+
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Action Comics">
@@ -23,7 +35,8 @@
         </div>
         <div class="mb-3">
             <label for="series" class="form-label">Serie</label>
-            <input type="text" class="form-control" id="series" name="series" placeholder="American Vampire 1976">
+            <input type="text" class="form-control" id="series" name="series"
+                placeholder="American Vampire 1976">
         </div>
         <div class="mb-3">
             <label for="sale_date" class="form-label">Data d'uscita</label>
@@ -35,9 +48,9 @@
         </div>
         <button class="btn btn-success" type="submit"><i class="fa-solid fa-file-import"></i></button>
         <button class="btn btn-danger" type="reset"><i class="fa-solid fa-xmark"></i></button>
-    </form>
+</form>
 @endsection
 
 @section('titlePage')
-    Nuovo Fumetto
+Nuovo Fumetto
 @endsection
