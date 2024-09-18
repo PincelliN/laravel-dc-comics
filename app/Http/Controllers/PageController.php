@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comic;
 use App\Functions\Helper;
+use App\Http\Requests\ComicRequest;
 
 class PageController extends Controller
 {
@@ -31,9 +32,9 @@ class PageController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
-        $request->validate([
+       /*  $request->validate([
             'title'=>'required|min:5|max:100',
             'thumb'=>'required|extensions:jpg,png,gif|starts_with:https://www.',
             'price'=>'required|min:3|max:10',
@@ -62,7 +63,7 @@ class PageController extends Controller
             'type.required' => 'Il campo tipo è obbligatorio.',
             'type.min' => 'Il tipo deve avere almeno 3 caratteri.',
             'type.max' => 'Il tipo non può superare i 50 caratteri.'
-        ]);
+        ]); */
         $data=$request->all();
         /*  dd($data); */
         $new_comic= new Comic();
